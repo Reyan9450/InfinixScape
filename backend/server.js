@@ -13,6 +13,10 @@ dotenv.config();
 const app = express();
 // onsole.log("Environment Variables:", process.env);
 
+
+const port = process.env.PORT||4000;
+
+
 // CORS configuration
 const corsOptions = {
     origin: 'http://localhost:5173', // Allow only your frontend origin
@@ -35,7 +39,7 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
     connectMongo();
     console.log("Server running on port 5000");
 });
