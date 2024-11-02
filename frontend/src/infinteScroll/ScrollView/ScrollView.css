@@ -1,0 +1,31 @@
+.scrollContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    
+}
+.scrollContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling outside snapping behavior */
+}
+
+.scrollItem {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.loading {
+    position: fixed;
+    bottom: 20px;
+    font-size: 18px;
+    color: #555;
+}

@@ -1,0 +1,51 @@
+.loginForm {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 30vh;
+    width: 10vw;
+    color: black;
+
+
+}
+
+.loginForm input {
+    
+    height: 5vh;
+    width: 10vw;
+    border-radius: 10px;
+    border: none;
+    font-size: larger;
+    padding: 10px;
+    background-color: #f3f6e5;
+    color: #000;
+
+}
+
+.loginForm a {
+
+    margin: 0;
+    font-size: small;
+    color: #5404FE;
+
+
+}
+
+.loginForm .submitBtn {
+    
+    
+    background-color: #747BD6;
+    cursor: pointer; /* Add this to give it a clickable effect */
+    width:10vw;
+    align-self: center;
+    
+
+
+}
+
+.loginForm .forSignupLink{
+    
+    align-self: center;
+    
+}

@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and borders are included in width/height */
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevent overflow and hide scrollbars */
+  }
+  .heading{
+
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+  }
+  .container {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #2D2338;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; /* Center horizontally */
+  }
+  
+  .container p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white; /* To improve readability on dark background */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%; /* Full width of the screen for smaller devices */
+      height: 100%; /* Full height of the screen */
+      padding: 20px;
+    }
+  
+    .container p {
+      font-size: 20px; /* Reduce font size slightly for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px; /* Less padding on small mobile screens */
+    }
+  
+    .container p {
+      font-size: 18px; /* Further reduce font size for mobile devices */
+    }
+  }
+  

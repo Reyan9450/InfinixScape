@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and borders are included in width/height */
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevent overflow and hide scrollbars */
+  }
+  /* .heading{
+
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+  } */
+  .mainContainer {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start; 
+    /* Center horizontally */
+  }
+  
+  /* .container p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(14, 13, 13); /* To improve readability on dark background */
+
+  
+  /* Responsive adjustments */
+ .subContainer{
+    display: flex;
+    
+    justify-content:flex-start;
+    background-color: rgb(252, 255, 254);
+    height: 100%;
+    width: 100%;
+    }

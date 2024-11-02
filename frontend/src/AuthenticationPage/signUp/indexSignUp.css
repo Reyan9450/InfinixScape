@@ -1,0 +1,43 @@
+
+
+
+.signupForm {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly;
+    height: 35vh;
+    width: 10vw;
+    color: black;
+    
+}
+
+.signupForm input {
+
+    height: 5vh;
+    width: 10vw;
+    border-radius: 10px;
+    border: none;
+    font-size: larger;
+    padding: 10px;
+    background-color: #f3f6e5;
+    color: black;
+
+}
+
+.signupForm a {
+    margin: 0;
+    font-size: small;
+    color: #5404FE;
+}
+
+.signupForm .submitBtn {
+    background-color: #747BD6;
+    cursor: pointer;
+    width: 10vw;
+    align-self: center;
+}
+
+.signupForm .forLoginLink {
+    align-self: center;
+}
+

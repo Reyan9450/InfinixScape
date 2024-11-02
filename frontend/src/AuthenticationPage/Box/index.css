@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+*{
+    
+    font-family: 'Irish Grover', cursive;
+
+}
+.boxContainer {
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 50vh;
+    background-color: #dad7de;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0;
+
+
+}
+
+.loginSignupSlider {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75%;
+    height: 15%;
+    margin-bottom: 20px;
+    background-color: #f3f6e5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0;
+}
+
+.loginbtn{
+    background-color:#f3f6e5 ;
+    color: black;
+    width: 50%;
+    font-size: larger;
+}
+.signupbtn{
+    background-color:#f3f6e5 ;
+    color: black;
+    width: 50%;
+    font-size: larger;
+}
+
+.active{
+    
+    background-color: #747BD6;
+    cursor: pointer; /* Add this to give it a clickable effect */
+    width: 50%;
+    font-size: larger;
+
+
+}
+
+
+
