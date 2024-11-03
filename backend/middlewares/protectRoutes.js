@@ -1,7 +1,10 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/user.js';
+import dotenv from 'dotenv';
 
-const secret = "DFERF$#@DEFG$5"; // Use your secret key, preferably store it in environment variables.
+dotenv.config();
+
+const secret = process.env.JWT_Secret; // Use your secret key, preferably store it in environment variables.
 
 export const protect = async (req, res, next) => {
     // Retrieve the JWT from cookies

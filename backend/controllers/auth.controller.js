@@ -1,11 +1,10 @@
 import express from "express";
-import bcrypt from "bcrypt";
-// import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs"; // Use bcryptjs for compatibility
+import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 import generateToken from "../utils/genrateToken.js";
-import jwt from "jsonwebtoken";
 
-
+// Signup function
 export const signup = async (req, res) => {
   try {
     const { fullname, userName, email, password, confirmPassword, gender } = req.body;
@@ -53,16 +52,16 @@ export const signup = async (req, res) => {
     // Set the token in an HttpOnly cookie
     res.cookie('token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',  // Use 'secure' only in production (HTTPS)
-      sameSite: 'Strict',   // Helps prevent CSRF attacks
-      maxAge: 24 * 60 * 60 * 1000  // 24 hours expiration
+      secure: process.env.NODE_ENV === 'production', // Use 'secure' only in production (HTTPS)
+      sameSite: 'Strict', // Helps prevent CSRF attacks
+      maxAge: 24 * 60 * 60 * 1000 // 24 hours expiration
     });
 
     // Send success response with user data including ID
     res.status(201).json({
       message: "User created successfully",
       user: {
-        id: newUser._id,          // Include user ID here
+        id: newUser._id,
         fullname: newUser.fullname,
         userName: newUser.userName,
         email: newUser.email,
@@ -72,11 +71,12 @@ export const signup = async (req, res) => {
     });
 
   } catch (err) {
-    console.log(err);
+    console.error(err); // Log error for debugging
     res.status(500).json({ message: "An error occurred: " + err.message });
   }
 };
 
+// Login function
 export const login = async (req, res) => {
   try {
     const { userName, password } = req.body;
@@ -86,7 +86,6 @@ export const login = async (req, res) => {
     }
 
     const user = await User.findOne({ userName });
-
     if (!user) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
@@ -97,21 +96,21 @@ export const login = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = generateToken(user._id);  // Generate token using user ID
+    const token = generateToken(user._id);
 
     // Set the token in an HttpOnly cookie
-    res.cookie('jwt', token, {
-      httpOnly: true,       // Ensures the cookie is only accessible by the web server
-      secure: process.env.NODE_ENV === 'production',  // Use 'secure' only in production (HTTPS)
-      sameSite: 'Strict',   // Helps prevent CSRF attacks
-      maxAge: 24 * 60 * 60 * 1000  // 24 hours expiration
+    res.cookie('token', token, { // Changed 'jwt' to 'token' for consistency
+      httpOnly: true, // Ensures the cookie is only accessible by the web server
+      secure: process.env.NODE_ENV === 'production', // Use 'secure' only in production (HTTPS)
+      sameSite: 'Strict', // Helps prevent CSRF attacks
+      maxAge: 24 * 60 * 60 * 1000 // 24 hours expiration
     });
 
     // Send success response with user data including ID
     res.status(200).json({
       message: "Login successful",
       user: {
-        id: user._id,           // Include user ID here
+        id: user._id,
         fullname: user.fullname,
         userName: user.userName,
         email: user.email,
@@ -121,11 +120,10 @@ export const login = async (req, res) => {
     });
 
   } catch (err) {
-    console.log(err);
+    console.error(err); // Log error for debugging
     res.status(500).json({ message: "An error occurred: " + err.message });
   }
 };
-
 
 // Logout function for token-based authentication
 export const logout = (req, res) => {
@@ -137,4 +135,3 @@ export const logout = (req, res) => {
 
   res.status(200).json({ message: "Logout successful" });
 };
-
