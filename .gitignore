@@ -1,0 +1,34 @@
+node_modules
+package-lock.json
+# Logs
+logs/
+*.log
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+build/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Compiled files
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.zip
+
+# Dependency directories
+vendor/
