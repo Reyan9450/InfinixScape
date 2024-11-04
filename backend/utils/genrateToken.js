@@ -1,7 +1,7 @@
 import dotevn from 'dotenv'
 
 import jwt from 'jsonwebtoken'
-const secret =process.env.JWT_SECRET;
+const secret =process.env.JWT_Secret;
 
 
 
@@ -20,4 +20,4 @@ const generateToken = (userId) => {
     
 }
 
-export default generateToken
+export default generateToken    
