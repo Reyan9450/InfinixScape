@@ -14,7 +14,7 @@ export const ProfileContainer = () => {
                 const id = JSON.parse(userData)._id;
 
                 // Fetch user data using the user ID
-                const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+                const response = await fetch(`https://infinixscape-1.onrender.com/api/users/${id}`, {
 
                     credentials: 'include', 
                     headers: {

@@ -9,7 +9,7 @@ export const PostContainer = () => {
         const fetchPosts = async () => {    
             try {
                 const user = JSON.parse(localStorage.getItem('user'));
-                const response = await fetch(`http://localhost:5000/api/users/posts/${user._id}`, {
+                const response = await fetch(`https://infinixscape-1.onrender.com/api/users/posts/${user._id}`, {
                     credentials: 'include',
                     headers: {
                         'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ export const PostContainer = () => {
             formData.append('image', selectedFile); // Append file data to FormData
             formData.append('userId', user._id);
 
-            const response = await fetch('http://localhost:5000/api/upload/', {
+            const response = await fetch('https://infinixscape-1.onrender.com/api/upload/', {
                 method: 'POST',
                 credentials: 'include',
                 body: formData,
@@ -73,7 +73,7 @@ export const PostContainer = () => {
             {/* Display posts */}
             {posts.map((post) => (
                 <div key={post._id} className="post"> {/* Add unique key here */}
-                    <img src={`http://localhost:5000/${post.imageUrl}`} alt={`Post ${post._id}`} />
+                    <img src={`https://infinixscape-1.onrender.com/${post.imageUrl}`} alt={`Post ${post._id}`} />
                 </div>
             ))}
         </div>
